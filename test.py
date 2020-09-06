@@ -1,0 +1,2 @@
+program = "Hallo"
+print(program)
