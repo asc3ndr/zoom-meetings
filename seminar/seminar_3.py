@@ -14,17 +14,16 @@
 # Thor 50       True
 # Steve 500	    False
 
-# 1
-attemptee, force = input().split()
+# 1 boolean expression
+name, force = input().split()
 
-print(attemptee.lower() == "thor")
+print(name.lower() == "thor")
 
-# 2
-if attemptee == "thor":
+# 2 if / else
+if name == "thor":
     print(True)
-else:
+else name == "hulk":
     print(False)
-
+    
 # 3 Walrus Operator
-
-print((attemptee := input() == "thor"))
+print((name := input() == "thor"))
