@@ -1,2 +1,2 @@
-def min_print(tekst):
-    print(tekst)
+if __name__ == "__main__":
+    print(__name__)
