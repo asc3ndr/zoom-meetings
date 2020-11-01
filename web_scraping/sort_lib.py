@@ -1,6 +1,7 @@
 import timeit
 import matplotlib.pyplot as plt
 from json import load
+from random import randint
 
 
 def merge(arr, l, m, r):
@@ -62,29 +63,84 @@ def mergeSort(arr, l, r):
         merge(arr, l, m, r)
 
 
-arr1 = [num for num in range(500)]
-arr2 = [num for num in range(1000)]
-arr3 = [num for num in range(1500)]
-arr4 = [num for num in range(2000)]
+def quicksort(array):
+    # If the input array contains fewer than two elements,
+    # then return it as the result of the function
+    if len(array) < 2:
+        return array
+
+    low, same, high = [], [], []
+
+    # Select your `pivot` element randomly
+    pivot = array[randint(0, len(array) - 1)]
+
+    for item in array:
+        # Elements that are smaller than the `pivot` go to
+        # the `low` list. Elements that are larger than
+        # `pivot` go to the `high` list. Elements that are
+        # equal to `pivot` go to the `same` list.
+        if item < pivot:
+            low.append(item)
+        elif item == pivot:
+            same.append(item)
+        elif item > pivot:
+            high.append(item)
+
+    # The final result combines the sorted `low` list
+    # with the `same` list and the sorted `high` list
+    return quicksort(low) + same + quicksort(high)
+
+
+def min_mergesort(array, num):
+
+    tider = []
+    for i in range(num):
+        start = timeit.default_timer()
+        n = len(array)
+        mergeSort(array, 0, n - 1)
+        end = timeit.default_timer()
+        tider.append(end - start)
+
+    return min(tider)
+
+
+def min_quicksort(array, num):
+
+    tider = []
+    for i in range(num):
+        start = timeit.default_timer()
+        quicksort(array)
+        end = timeit.default_timer()
+        tider.append(end - start)
+
+    return min(tider)
+
+
+arr1 = [randint(0, 100) for num in range(500)]
+arr2 = [randint(0, 100) for num in range(1000)]
+arr3 = [randint(0, 100) for num in range(1500)]
+arr4 = [randint(0, 100) for num in range(2000)]
 all_arr = [arr1, arr2, arr3, arr4]
 
-liste_av_tider = []
+mergesort_tider = []
+quicksort_tider = []
 
 for array in all_arr:
 
-    start = timeit.default_timer()
+    mergesort_tid = min_mergesort(array, 100)
+    quicksort_tid = min_quicksort(array, 100)
 
-    n = len(array)
-
-    mergeSort(array, 0, n - 1)
-
-    end = timeit.default_timer()
-
-    liste_av_tider.append(end - start)
+    mergesort_tider.append(mergesort_tid)
+    quicksort_tider.append(quicksort_tid)
 
 
 plt.autoscale(True)
-plt.plot([len(value) for index, value in enumerate(all_arr)], liste_av_tider, color="g")
+plt.plot(
+    [len(value) for index, value in enumerate(all_arr)], mergesort_tider, color="b"
+)
+plt.plot(
+    [len(value) for index, value in enumerate(all_arr)], quicksort_tider, color="r"
+)
 
 plt.xlabel("Datamengde")
 plt.ylabel("Time in seconds")
