@@ -64,17 +64,17 @@ from json import load, dump
 # print(lst)
 
 
-def test(nummer):
-    for i in range(nummer):
-        print(i ** 2)
+# def test(nummer):
+#     for i in range(nummer):
+#         print(i ** 2)
 
 
-for i in range(1000):
-    start = timeit.default_timer()
+# for i in range(1000):
+#     start = timeit.default_timer()
 
-    test(100)
+#     test(100)
 
-    end = timeit.default_timer()
+#     end = timeit.default_timer()
 
-    print(end - start)
+#     print(end - start)
 
