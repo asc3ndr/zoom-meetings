@@ -17,17 +17,17 @@ while True:
 ###################################################################
 
 
-def classify_triangle(A, B, C):
+# def classify_triangle(A, B, C):
 
-    if A == B == C:
-        print("Equilateral triangle")
-    elif A > (B + C) or B > (C + A) or C > (A + B):
-        print("Not a triangle")
-    elif ((A == C) and A != B) or ((B == C) and B != A) or ((A == B) and A != C):
-        print("Isosceles triangle")
-    elif A != B and A != C and C != B:
-        print("Scalene triangle")
+#     if A == B == C:
+#         print("Equilateral triangle")
+#     elif A > (B + C) or B > (C + A) or C > (A + B):
+#         print("Not a triangle")
+#     elif ((A == C) and A != B) or ((B == C) and B != A) or ((A == B) and A != C):
+#         print("Isosceles triangle")
+#     elif A != B and A != C and C != B:
+#         print("Scalene triangle")
 
 
-# classify_triangle(10, 5, 9)
+# # classify_triangle(10, 5, 9)
 

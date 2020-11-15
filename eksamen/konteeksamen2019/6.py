@@ -23,11 +23,11 @@ def divisible_by_three(one, two):
 
     prod = 1
     for num in range(one, two + 1):
-        if num % 3 == 0 and not num % 2 == 0:
+        if num % 3 == 0 and num & 1:
             prod *= num
 
     return prod
 
 
-print(divisible_by_three(1, 2))
+print(divisible_by_three(100, 106))
 

@@ -33,10 +33,10 @@ def print_winner(running_times):
         running_times.remove(time)
         winners.append((runner, time))
 
+    print(winners)
     print(f"Gold medal: runner {winners[0][0]} with {winners[0][1]}s")
     print(f"Silver medal: runner {winners[1][0]} with {winners[1][1]}s")
     print(f"Bronze medal: runner {winners[2][0]} with {winners[2][1]}s")
 
 
 print_winner([9000, 5000, 4900, 8000, 3781])
-

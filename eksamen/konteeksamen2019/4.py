@@ -22,4 +22,4 @@ def times_occuring(num, num_list):
     return count
 
 
-# print(times_occuring(88, [38, 40, 88, 60, 71, 70, 82, 88]))
+print(times_occuring(88, [38, 40, 88, 60, 71, 70, 82, 88]))

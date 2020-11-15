@@ -15,38 +15,16 @@
 
 ###################################################################
 
-# first, n = map(
-#     int, input("Enter two positive integers separated with space").split(" ")
-# )
-
-# if first < 0 or n < 0:
-#     print("You can only enter positive integeres.")
-
-# while n > 0:
-#     for i in range(1, first + 1):
-#         summen = 0
-
-#         if i == 11:
-#             print("\n")
-#             first = first + 1
-#         else:
-#             summen == first * i
-#             print(first, "*", i, "=", summen)
-#         n = n - 1
-
-###################################################################
-
 
 def print_multiplication_table(first, n):
-    for i in range(1, 12):
-        print(f"{first} * {i} = {first * i}")
 
-    print("")
-    successor = first + (n - 1)
+    for iteration in range(n):
 
-    for i in range(1, 12):
-        print(f"{successor} * {i} = {successor * i}")
+        for i in range(1, 12):
+            print(f"{first + iteration} * {i} = {(first + iteration) * i}")
+
+        print("")
 
 
-print_multiplication_table(5, 2)
+print_multiplication_table(10, 6)
 
