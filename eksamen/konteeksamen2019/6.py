@@ -1,16 +1,16 @@
-# A, B = int(input("First integer")), int(input("Second integer"))
-# X, Z, Y = 0, 0, 0
-# while True:
-#     if A < B:
-#         X = B and Z = A
-#         break
-#     else:
-#         X = A and Z = B
-#         break
-# for i in range(Z, X + 1):
-#     if i % 3 == 1:
-#         Y = Y + i
-# print(Y)
+A, B = int(input("First integer")), int(input("Second integer"))
+X, Z, Y = 0, 0, 0
+while True:
+    if A < B:
+        X = B and Z = A
+        break
+    else:
+        X = A and Z = B
+        break
+for i in range(Z, X + 1):
+    if i % 3 == 1:
+        Y = Y + i
+print(Y)
 
 
 ###################################################################
