@@ -8,5 +8,5 @@ def print_matrix(rows, columns):
     print("*" * columns)
 
 
-print_matrix(10, 6)
+print_matrix(5, 10)
 
