@@ -24,19 +24,24 @@ while i > 0:
 ###################################################################
 
 
-def print_winner(running_times):
+def print_winner(running_times: list):
+    times = [(value, index + 1) for index, value in enumerate(running_times)]
 
-    winners = []
     for i in range(3):
-        time = min(running_times)
-        runner = running_times.index(time) + 1
-        running_times.remove(time)
-        winners.append((runner, time))
+        lowest = times[i]
 
-    print(winners)
-    print(f"Gold medal: runner {winners[0][0]} with {winners[0][1]}s")
-    print(f"Silver medal: runner {winners[1][0]} with {winners[1][1]}s")
-    print(f"Bronze medal: runner {winners[2][0]} with {winners[2][1]}s")
+        for j in range(i, len(times)):
+            if times[j] < lowest:
+                lowest = times[j]
+                times[i], times[j] = times[j], times[i]
+
+        times[i] = lowest
+
+    print(f"Gold medal: runner {times[0][1]} with {times[0][0]}s")
+    print(f"Silver medal: runner {times[1][1]} with {times[1][0]}s")
+    print(f"Bronze medal: runner {times[2][1]} with {times[2][0]}s")
 
 
 print_winner([9000, 5000, 4900, 8000, 3781])
+print_winner([100, 200, 300])
+print_winner([200, 300, 100])
