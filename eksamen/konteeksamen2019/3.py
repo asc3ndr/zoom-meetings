@@ -18,8 +18,8 @@ while n < 0:
 
 def print_multiplication_table(first, n):
     for iteration in range(n):
-        for i in range(1, 12):
-            print(f"{first + iteration} * {i} = {(first + iteration) * i}")
+        for number in range(1, 12):
+            print(f"{first + iteration} * {number} = {(first + iteration) * number}")
         print("")
 
 
