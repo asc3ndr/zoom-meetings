@@ -17,7 +17,6 @@ print(Y)
 
 
 def divisible_by_three(one, two):
-
     if one > two:
         one, two = two, one
 
@@ -25,7 +24,6 @@ def divisible_by_three(one, two):
     for num in range(one, two + 1):
         if num % 3 == 0 and num & 1:
             prod *= num
-
     return prod
 
 
