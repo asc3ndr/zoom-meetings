@@ -43,5 +43,27 @@ def print_winner(running_times: list):
 
 
 print_winner([9000, 5000, 4900, 8000, 3781])
-print_winner([100, 200, 300])
-print_winner([200, 300, 100])
+
+                  
+###################################################################
+                  
+                  
+def print_winner(running_times: list):
+    times = [(value, index + 1) for index, value in enumerate(running_times)]
+    winners = [0, 1, 2]
+
+    for i in range(3):
+        lowest = 0
+
+        for j in range(len(times)):
+            if lowest == 0 or (times[j] < lowest and times[j] not in winners):
+                lowest = times[j]
+
+        winners[i] = lowest
+
+    print(f"Gold medal: runner {winners[0][1]} with {winners[0][0]}s")
+    print(f"Silver medal: runner {winners[1][1]} with {winners[1][0]}s")
+    print(f"Bronze medal: runner {winners[2][1]} with {winners[2][0]}s")
+
+
+print_winner([9000, 5000, 4900, 8000, 3781])
