@@ -22,3 +22,15 @@ def split_name(string):
 
 name = input()
 print("Happy Exam!", *split_name(name), sep="\n")
+
+
+###################################################################
+
+# Steffen R
+
+name = input('Name: ')
+
+nameString = name.replace(' ', '\n')
+
+print("Happy Exam!")
+print(nameString)
