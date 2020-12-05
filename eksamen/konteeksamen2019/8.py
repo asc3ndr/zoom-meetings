@@ -67,3 +67,25 @@ def print_winner(running_times: list):
 
 
 print_winner([9000, 5000, 4900, 8000, 3781])
+
+                  
+###################################################################                  
+# Steffen R
+                  
+times = [9000, 5000, 4900, 8000, 3781]
+
+def medals(lst):
+    copy = [[i + 1, time] for i, time in enumerate(lst)]
+    for i in range(len(copy)):
+        sorted = True
+        for j in range(len(copy)-i-1):
+            if copy[j+1][1] < copy[j][1]:
+                copy[j], copy[j+1] = copy[j+1], copy[j]
+                sorted = False
+        if sorted:
+            break
+    print(f"Gold medal: runner {copy[0][0]} with {copy[0][1]}s")
+    print(f"Silver medal: runner {copy[1][0]} with {copy[1][1]}s")
+    print(f"Bronze medal: runner {copy[2][0]} with {copy[2][1]}s")
+
+medals(times)
