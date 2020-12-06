@@ -7,16 +7,30 @@ print(Exam, N, A, sep="\n")
 ###################################################################
 
 
-navn = input()
+def split_name(string):
+    last_index = 0
+    result = []
 
-fornavn = ""
-etternavn = ""
+    for index, value in enumerate(string):
+        if value == " ":
+            result.append(string[last_index:index])
+            last_index = index + 1
 
-for index, letter in enumerate(navn):
-    if letter == " ":
-        fornavn = navn[:index]
-        etternavn = navn[index + 1 :]
-        break
+    result.append(string[last_index:])
+    return result
 
-print("Happy Exam!", fornavn, etternavn, sep="\n")
 
+name = input()
+print("Happy Exam!", *split_name(name), sep="\n")
+
+
+###################################################################
+
+# Steffen R
+
+name = input("Name: ")
+
+nameString = name.replace(" ", "\n")
+
+print("Happy Exam!")
+print(nameString)
